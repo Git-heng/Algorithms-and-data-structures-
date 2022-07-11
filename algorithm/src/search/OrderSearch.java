@@ -1,5 +1,8 @@
 package search;
 
+/**
+*顺序查找
+*/
 public class OrderSearch {
 
     public static <E extends Comparable<E>> int find(E[] arr, E e) {
