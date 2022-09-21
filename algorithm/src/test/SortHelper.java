@@ -6,7 +6,6 @@ import nnsort.InsertSorter;
 import nlognsort.MergeSorter;
 import nnsort.SelectSorter;
 
-//新的修改
 public class SortHelper {
 
     public static <E extends Comparable<E>> void sortTest(String sortName, E[] arr) {
