@@ -1,7 +1,7 @@
 package search;
 
 public class BinarySearch {
-
+//git
     public static <E extends Comparable<E>> int search(E[] arr, E target) {
         if (arr == null) {
             return -1;
