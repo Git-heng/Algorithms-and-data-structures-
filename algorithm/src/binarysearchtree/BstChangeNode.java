@@ -1,7 +1,7 @@
 package binarysearchtree;
 
 public class BstChangeNode<E extends Comparable<E>> {
-
+//test git branch
     class Node {
         private E e;
         private Node left, right;
