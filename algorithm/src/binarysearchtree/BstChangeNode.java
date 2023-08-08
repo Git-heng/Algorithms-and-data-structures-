@@ -15,6 +15,7 @@ public class BstChangeNode<E extends Comparable<E>> {
         }
     }
 
+    //test change2
     private Node root = null;
 
     public int getSize() {
