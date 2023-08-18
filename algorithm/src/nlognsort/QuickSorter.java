@@ -12,9 +12,9 @@ import java.util.Random;
  * 备注：带了标记的是优化点
  */
 
-public class QuickSorter {
+public class  QuickSorter {
 
-    public <E extends Comparable<E>> void quickSort(E[] arr) {
+    public static <E extends Comparable<E>> void quickSort(E[] arr) {
         Random random = new Random();
         if (arr != null) {
             quickSort(arr, 0, arr.length - 1, random);
@@ -22,16 +22,16 @@ public class QuickSorter {
     }
 
     //先将第一个元素放到正确的位置，然后分别对[start, p-1],[p+1, end]进行quickSort
-    private <E extends Comparable<E>> void quickSort(E[] arr, int start, int end, Random random) {
+    private static <E extends Comparable<E>> void quickSort(E[] arr, int start, int end, Random random) {
         if (start >= end) {
             return;
         }
-        int randomNum = random.nextInt(end+1-start);
+        int randomNum = random.nextInt(end+1-start) + start;
         swap(arr, start, randomNum);
 //        swap(arr, start, (start+end)/2);
         int p = start;
         int left = start;
-        //遍历数组[start, end],小于p的值放在区间[start+1, left],大于p的值放在[left+1, right],当前点right+1
+        //遍历数组[start, end],小于p的值放在区间[start+1, left],大于p的值放在[left+1, right].
         //当前要处理的元素在大值区间的右1个，即right+1
         for (int right = start; right + 1 <= end; right++) {
             //大于p处元素，大值区间扩展即可，right++,只有当小于p处元素时，才特别处理:
@@ -50,25 +50,26 @@ public class QuickSorter {
     }
 
 
-    public <E extends Comparable<E>> void swap(E[] arr, int a, int b) {
+    private static <E extends Comparable<E>> void swap(E[] arr, int a, int b) {
         E tempE = arr[a];
         arr[a] = arr[b];
         arr[b] = tempE;
     }
 
     public static void main(String[] args) {
-        QuickSorter quickSorter = new QuickSorter();
         Integer[] a = new Integer[2];
         for (int i = 0; i < 2; i++) {
             a[i] = i;
         }
-//        quickSorter.beSpecialArray(a, 0, 50000-1);
-//        System.out.println(Arrays.toString(a));
 
         System.out.println(Arrays.toString(a));
-        quickSorter.quickSort(a);
+        quickSort(a);
     }
 
+
+    /**
+     * 测试特殊情况算法的局限性
+     */
     public void beSpecialArray(Integer[] arr, int start, int end){
         if (start>=end){
             return;

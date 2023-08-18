@@ -3,7 +3,7 @@ package search;
 public class SearchUtils {
 
     public static void main(String[] args) {
-        int n = 1000;
+        int n = 100000;
         int k = 55;
         Integer[] arr = new Integer[n];
         int[] arr1 = new int[n];
@@ -29,5 +29,11 @@ public class SearchUtils {
         System.out.println("FibonacciSearch.find(arr, k): " + FibonacciSearch.find(arr1, k));
         double time4 = System.nanoTime() / 1000000.0;
         System.out.println(time4 - time3);
+
+        System.out.println("FibonacciSearchWithRe.find(arr, k): " + FibonacciSearchWithRe.find(arr1, k));
+        double time5 = System.nanoTime() / 1000000.0;
+        System.out.println(time5 - time4);
+
+        //todo:fibo failed
     }
 }

@@ -5,6 +5,7 @@ public class FibonacciSearch {
     /**
      * F(k) = F(k-1) + F(k-2） ——>每一个 F(k) - 1 都可以拆分成三部分 F(k-1)-1、mid、 F(k-2)-1，F(k-1)-1又可以拆分成三部分
      * 让mid保持在数组的黄金分割点处，mid前面长度为F[K-1]-1，后面长度为F[K-2]-1，数组总长度为F[K]-1，mid在黄金分割点
+     * https://blog.csdn.net/Scccc_/article/details/107101647
      */
 
     public static int find(int[] arr, int a) {

@@ -1,6 +1,7 @@
 package test;
 
 import nlognsort.MergeSorterFromBottom;
+import nlognsort.QuickSorter;
 import nnsort.BubbleSorter;
 import nnsort.InsertSorter;
 import nlognsort.MergeSorter;
@@ -13,6 +14,11 @@ public class SortHelper {
 
         //根据名称使用不同的排序
         switch (sortName){
+
+            case "QuickSorter":
+                QuickSorter.quickSort(arr);
+                break;
+
             case "MergeSorter":
                 MergeSorter.sort(arr);
                 break;
@@ -30,7 +36,6 @@ public class SortHelper {
             case "SelectSorter":
                 SelectSorter.sort(arr);
                 break;
-
 
             default:
                 break;
@@ -56,10 +61,9 @@ public class SortHelper {
         sortTest(BubbleSorter.class.getSimpleName(), integers);
         sortTest(SelectSorter.class.getSimpleName(), integers);
 
-
-
         sortTest(MergeSorter.class.getSimpleName(), integers);
         sortTest(MergeSorterFromBottom.class.getSimpleName(), integers);
+        sortTest(QuickSorter.class.getSimpleName(), integers);
 
     }
 }
