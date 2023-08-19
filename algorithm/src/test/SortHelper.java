@@ -1,5 +1,6 @@
 package test;
 
+import heap.HeapSortWithArray;
 import nlognsort.MergeSorterFromBottom;
 import nlognsort.QuickSorter;
 import nnsort.BubbleSorter;
@@ -13,7 +14,11 @@ public class SortHelper {
         long startTime = System.nanoTime();
 
         //根据名称使用不同的排序
-        switch (sortName){
+        switch (sortName) {
+
+            case "HeapSortWithArray":
+                HeapSortWithArray.heapSort(arr);
+                break;
 
             case "QuickSorter":
                 QuickSorter.quickSort(arr);
@@ -43,7 +48,7 @@ public class SortHelper {
 
         long endTime = System.nanoTime();
         System.out.println(isSort(arr));
-        System.out.println("耗时为：" + (endTime - startTime)/1000000000.0);
+        System.out.println("耗时为：" + (endTime - startTime) / 1000000000.0);
     }
 
     public static <E extends Comparable<E>> boolean isSort(E[] arr) {
@@ -61,9 +66,12 @@ public class SortHelper {
         sortTest(BubbleSorter.class.getSimpleName(), integers);
         sortTest(SelectSorter.class.getSimpleName(), integers);
 
+        System.out.println("============================");
+
         sortTest(MergeSorter.class.getSimpleName(), integers);
         sortTest(MergeSorterFromBottom.class.getSimpleName(), integers);
         sortTest(QuickSorter.class.getSimpleName(), integers);
+        sortTest(HeapSortWithArray.class.getSimpleName(), integers);
 
     }
 }

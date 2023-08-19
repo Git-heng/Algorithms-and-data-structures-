@@ -13,7 +13,7 @@ public class InsertSorter {
 
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
-        //对于第i个位置的元素，依次对比该元素左边的元素（已排序空间），任何一个大于他的值都应该往右移动一格
+        //[2,3,4,5,1], 对于第i个位置的元素，依次对比该元素左边的元素（已排序空间），任何一个大于他的值都应该往右移动一格
         for (int i = 0; i < arr.length; i++) {
             E tempE = arr[i];
             int j;
